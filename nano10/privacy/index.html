@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Nano10</title>
+  
+  <!-- SEO & Google Play Compliance Meta Tags -->
+  <meta name="description" content="Official Privacy Policy for Nano10. Read about how we collect, process, protect, and handle your data in accordance with Google Play Store developer guidelines.">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Custom Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c084fc',
+              400: '#a855f7',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+              950: '#2e1065',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Glassmorphism, Micro-animations, & Highlight Styles -->
+  <style>
+    .glass-nav {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .glass-card {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .search-highlight {
+      background-color: rgba(139, 92, 246, 0.25);
+      border-bottom: 2px solid #8b5cf6;
+      border-radius: 0.125rem;
+      color: inherit;
+    }
+    .dark .search-highlight {
+      background-color: rgba(168, 85, 247, 0.35);
+      border-bottom: 2px solid #c084fc;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(139, 92, 246, 0.25);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(139, 92, 246, 0.45);
+    }
+    /* Simple dynamic fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-700 dark:bg-slate-950 dark:text-slate-300 font-sans transition-colors duration-300 antialiased selection:bg-brand-500/30">
+
+  <!-- Ambient Glow Effects (Visible in Dark Mode) -->
+  <div class="fixed top-0 left-1/4 -translate-y-1/2 w-96 h-96 bg-brand-500/10 dark:bg-brand-600/10 rounded-full blur-[100px] pointer-events-none z-0"></div>
+  <div class="fixed bottom-0 right-1/4 translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/5 dark:bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+  <!-- Header Navigation -->
+  <nav class="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/75 glass-nav dark:border-slate-800/80 dark:bg-slate-950/75 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- App Identity -->
+        <a href="#" class="flex items-center space-x-3 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform duration-300">
+            <span class="font-heading font-black text-white text-base">N10</span>
+          </div>
+          <span class="font-heading font-bold text-xl tracking-tight text-slate-900 dark:text-white">
+            Nano<span class="text-brand-500 dark:text-brand-400">10</span>
+          </span>
+        </a>
+
+        <!-- Right Side controls (Theme, Links) -->
+        <div class="flex items-center space-x-4">
+          <a href="#deletion" class="hidden sm:inline-flex items-center text-xs font-semibold px-3.5 py-2 rounded-lg text-rose-600 bg-rose-50 hover:bg-rose-100 dark:text-rose-400 dark:bg-rose-950/30 dark:hover:bg-rose-950/50 transition-all border border-rose-200/50 dark:border-rose-900/30">
+            Account Deletion
+          </a>
+          
+          <!-- Theme Toggle Switch -->
+          <button id="themeToggle" class="p-2 rounded-lg border border-slate-200 bg-slate-100 hover:bg-slate-200 dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 focus:outline-none transition-all" aria-label="Toggle Dark Mode">
+            <!-- Sun Icon (Hidden by default, shown in dark mode) -->
+            <svg id="sunIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364-3.636l-.707.707M6.343 17.657l-.707.707m2.828 0l-.707-.707m2.828-11.314l-.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
+            </svg>
+            <!-- Moon Icon (Shown by default, hidden in dark mode) -->
+            <svg id="moonIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="relative z-10 pt-16 pb-12 overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="inline-flex items-center space-x-2 bg-brand-500/10 text-brand-600 dark:bg-brand-400/10 dark:text-brand-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-6 border border-brand-500/20">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-500 dark:bg-brand-400 animate-pulse"></span>
+        <span>Google Play Compliant</span>
+      </div>
+      <h1 class="font-heading font-black text-4xl sm:text-5xl text-slate-900 dark:text-white tracking-tight leading-none mb-4">
+        Privacy Policy
+      </h1>
+      <p class="text-slate-500 dark:text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-8 font-light">
+        This Policy explains how Nano10 collects, secures, and handles your information to provide our competitive exam prep features.
+      </p>
+      
+      <!-- Stats / Details -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-xl mx-auto p-4 rounded-2xl bg-white/40 border border-slate-200/60 glass-card dark:bg-slate-900/40 dark:border-slate-800/60 text-sm">
+        <div>
+          <span class="block text-slate-400 dark:text-slate-500 text-xs">Last Updated</span>
+          <span class="font-semibold text-slate-900 dark:text-white" id="currentDate">July 29, 2026</span>
+        </div>
+        <div>
+          <span class="block text-slate-400 dark:text-slate-500 text-xs">Reading Time</span>
+          <span class="font-semibold text-slate-900 dark:text-white">~5 Minutes</span>
+        </div>
+        <div class="col-span-2 md:col-span-1">
+          <span class="block text-slate-400 dark:text-slate-500 text-xs">Scope</span>
+          <span class="font-semibold text-brand-600 dark:text-brand-400">Nano10 Ecosystem</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Interactive Search / Filter Bar -->
+  <section class="relative z-10 max-w-4xl mx-auto px-4 mb-8">
+    <div class="relative max-w-lg mx-auto">
+      <input type="text" id="policySearch" placeholder="Search privacy terms (e.g. 'delete', 'Firebase', 'cookies')..." class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 bg-white/80 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 dark:border-slate-800 dark:bg-slate-900/80 dark:focus:bg-slate-900 text-sm dark:text-slate-200 shadow-sm glass-card transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500">
+      <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 dark:text-slate-500">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </div>
+    </div>
+    <p id="searchFeedback" class="text-center text-xs text-brand-500 dark:text-brand-400 mt-2 min-h-[1rem] hidden"></p>
+  </section>
+
+  <!-- Main Container -->
+  <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- Left Column: Sticky Navigation (Hidden on small screens) -->
+      <aside class="hidden lg:block lg:col-span-3">
+        <div class="sticky top-24 p-5 rounded-2xl bg-white border border-slate-200/80 dark:bg-slate-900 dark:border-slate-800/80 space-y-4">
+          <h2 class="font-heading font-semibold text-xs text-slate-400 dark:text-slate-500 uppercase tracking-widest border-b border-slate-100 dark:border-slate-800 pb-2">
+            Sections
+          </h2>
+          <nav class="space-y-1" id="toc-nav">
+            <a href="#intro" class="toc-link block py-2 px-3 text-sm font-medium rounded-lg text-brand-600 bg-brand-50/50 dark:text-brand-400 dark:bg-brand-950/20 border-l-2 border-brand-500 transition-all">
+              1. Introduction
+            </a>
+            <a href="#info-collect" class="toc-link block py-2 px-3 text-sm font-medium rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800/40 border-l-2 border-transparent transition-all">
+              2. Information We Collect
+            </a>
+            <a href="#how-use" class="toc-link block py-2 px-3 text-sm font-medium rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800/40 border-l-2 border-transparent transition-all">
+              3. How We Use Information
+            </a>
+            <a href="#third-party" class="toc-link block py-2 px-3 text-sm font-medium rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800/40 border-l-2 border-transparent transition-all">
+              4. Third-Party Integrations
+            </a>
+            <a href="#retention-delete" class="toc-link block py-2 px-3 text-sm font-medium rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800/40 border-l-2 border-transparent transition-all">
+              5. Data Retention & Deletion
+            </a>
+            <a href="#children" class="toc-link block py-2 px-3 text-sm font-medium rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800/40 border-l-2 border-transparent transition-all">
+              6. Children's Privacy
+            </a>
+            <a href="#security" class="toc-link block py-2 px-3 text-sm font-medium rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800/40 border-l-2 border-transparent transition-all">
+              7. Security Measures
+            </a>
+            <a href="#rights" class="toc-link block py-2 px-3 text-sm font-medium rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800/40 border-l-2 border-transparent transition-all">
+              8. Your Data Rights
+            </a>
+            <a href="#changes" class="toc-link block py-2 px-3 text-sm font-medium rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800/40 border-l-2 border-transparent transition-all">
+              9. Policy Changes
+            </a>
+            <a href="#contact" class="toc-link block py-2 px-3 text-sm font-medium rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800/40 border-l-2 border-transparent transition-all">
+              10. Contact Us
+            </a>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Right Column: Content -->
+      <div class="col-span-1 lg:col-span-9 space-y-12 max-w-none text-slate-600 dark:text-slate-300">
+        
+        <!-- Introduction -->
+        <section id="intro" class="p-6 md:p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm content-section scroll-mt-20">
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="w-2.5 h-7 rounded-full bg-brand-500"></span>
+            <h2 class="font-heading font-bold text-2xl text-slate-900 dark:text-white">1. Introduction</h2>
+          </div>
+          <div class="space-y-4 leading-relaxed">
+            <p>
+              Welcome to <strong>Nano10</strong> ("we," "our," or "us"). We are committed to protecting your privacy and ensuring you have a secure experience when preparing for competitive exams using our services. 
+            </p>
+            <p>
+              This Privacy Policy explains what personal data and usage information we collect, how it is processed and shared, and the controls you have over your data when you access or use the <strong>Nano10</strong> mobile application (available on Google Play Store) and any associated web services (collectively, the "Service").
+            </p>
+            <p>
+              By downloading, installing, registering, or using Nano10, you agree to the collection and use of your information as outlined in this policy. If you do not agree with any terms herein, please do not access or use the Service.
+            </p>
+          </div>
+        </section>
+
+        <!-- Information We Collect -->
+        <section id="info-collect" class="p-6 md:p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm content-section scroll-mt-20">
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="w-2.5 h-7 rounded-full bg-brand-500"></span>
+            <h2 class="font-heading font-bold text-2xl text-slate-900 dark:text-white">2. Information We Collect</h2>
+          </div>
+          <div class="space-y-6 leading-relaxed">
+            <p>
+              To provide our specialized topic-wise daily tests, synchronous live contest leaderboards, and All India Rankings (AIR), we collect several types of information from you.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              <!-- Item 1: Personal Credentials -->
+              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-900">
+                <div class="flex items-center space-x-3 mb-3">
+                  <div class="p-2 rounded-lg bg-brand-100 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                  </div>
+                  <h3 class="font-heading font-semibold text-slate-900 dark:text-white">Account Profile Data</h3>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400">
+                  When you sign in using <strong>Google Sign-In via Firebase Authentication</strong>, we collect your unique Firebase UID, email address, display name, and profile picture URL.
+                </p>
+              </div>
+
+              <!-- Item 2: Test Performance Data -->
+              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-900">
+                <div class="flex items-center space-x-3 mb-3">
+                  <div class="p-2 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                    </svg>
+                  </div>
+                  <h3 class="font-heading font-semibold text-slate-900 dark:text-white">Performance & Attempt History</h3>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400">
+                  We save your selected weekly topics, test attempts, submitted answers, completion times, and computed contest scores to compile the leaderboard rankings.
+                </p>
+              </div>
+
+              <!-- Item 3: Device Information -->
+              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-900">
+                <div class="flex items-center space-x-3 mb-3">
+                  <div class="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                    </svg>
+                  </div>
+                  <h3 class="font-heading font-semibold text-slate-900 dark:text-white">Device & Connection Info</h3>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400">
+                  We collect your IP address, operating system version, and device type. We also collect and store your **Firebase Cloud Messaging (FCM) device token** to deliver alerts when a live test begins.
+                </p>
+              </div>
+
+              <!-- Item 4: Application Diagnostics -->
+              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-900">
+                <div class="flex items-center space-x-3 mb-3">
+                  <div class="p-2 rounded-lg bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                  </div>
+                  <h3 class="font-heading font-semibold text-slate-900 dark:text-white">Diagnostic & Crash Logs</h3>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400">
+                  To ensure application stability and maintain connection sync during live events, we gather telemetry about application crashes, connection dropouts, and page load latencies.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- How We Use Your Information -->
+        <section id="how-use" class="p-6 md:p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm content-section scroll-mt-20">
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="w-2.5 h-7 rounded-full bg-brand-500"></span>
+            <h2 class="font-heading font-bold text-2xl text-slate-900 dark:text-white">3. How We Use Information</h2>
+          </div>
+          <div class="space-y-4 leading-relaxed">
+            <p>
+              Your data is processed based on legitimate interests to provide, sustain, and elevate the educational features of the Service. Specifically, we utilize the data to:
+            </p>
+            <ul class="space-y-3 list-none pl-0">
+              <li class="flex items-start space-x-3">
+                <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-brand-100 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xs font-bold">✓</span>
+                <span><strong>Authenticate User Access:</strong> Secure login verification using Firebase Identity tokens and user state storage.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-brand-100 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xs font-bold">✓</span>
+                <span><strong>Conduct Live Sync Contests:</strong> Synchronize countdown timers and answer tracking for simultaneously active participants.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-brand-100 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xs font-bold">✓</span>
+                <span><strong>Formulate Rankings:</strong> Calculate test scores, compute performance speed, and publish All India Rank (AIR) leaderboards.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-brand-100 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xs font-bold">✓</span>
+                <span><strong>Push Notifications:</strong> Send timed push reminders via Firebase Cloud Messaging right before scheduled live test rooms open.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-brand-100 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xs font-bold">✓</span>
+                <span><strong>Prevent Abuse & Cheating:</strong> Prevent duplicate profiles and identify fraudulent attempts or unauthorized API calls during live rank runs.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Third-Party Integrations -->
+        <section id="third-party" class="p-6 md:p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm content-section scroll-mt-20">
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="w-2.5 h-7 rounded-full bg-brand-500"></span>
+            <h2 class="font-heading font-bold text-2xl text-slate-900 dark:text-white">4. Third-Party Integrations</h2>
+          </div>
+          <div class="space-y-4 leading-relaxed">
+            <p>
+              We integrate secure third-party developer services provided by Google to handle infrastructure needs. They access data solely to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose:
+            </p>
+            
+            <div class="overflow-hidden border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50/50 dark:bg-slate-950/20 my-6">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                    <th class="p-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Partner / Tool</th>
+                    <th class="p-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Primary Purpose</th>
+                    <th class="p-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Information Exchanged</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-sm">
+                  <tr>
+                    <td class="p-4 font-semibold text-slate-900 dark:text-white">Firebase Authentication</td>
+                    <td class="p-4">Google Sign-In credential processing and profile setup</td>
+                    <td class="p-4">Name, email, avatar image asset path, UID token</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-semibold text-slate-900 dark:text-white">Firebase Cloud Messaging (FCM)</td>
+                    <td class="p-4">Sending push notifications for test launches</td>
+                    <td class="p-4">FCM device registration tokens</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="p-4 bg-amber-500/10 border border-amber-500/20 text-amber-800 dark:text-amber-300 rounded-2xl flex items-start space-x-3 text-sm">
+              <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+              </svg>
+              <div>
+                <strong class="font-semibold block mb-0.5">Advertising Disclaimer:</strong>
+                Our app is fully ad-free. We do not participate in any ad network networks, nor do we sell, rent, or distribute any user metrics to data brokers.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Data Retention & Deletion (Play Store Compliant) -->
+        <section id="retention-delete" class="p-6 md:p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm content-section scroll-mt-20">
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="w-2.5 h-7 rounded-full bg-rose-500"></span>
+            <h2 class="font-heading font-bold text-2xl text-slate-900 dark:text-white">5. Data Retention & Deletion</h2>
+          </div>
+          <div class="space-y-4 leading-relaxed">
+            <p>
+              In accordance with Google Play Store User Data policies, we offer clear data retention standards and an active, straightforward pathway for complete account and information deletion.
+            </p>
+            
+            <h3 class="font-heading font-semibold text-lg text-slate-900 dark:text-white mt-4">Data Retention Limits</h3>
+            <p>
+              We retain your account data and historical exam attempts for as long as you maintain an active profile on Nano10. Device FCM tokens are updated dynamically and stale tokens are discarded after 60 days of inactivity.
+            </p>
+            
+            <!-- Deletion Card -->
+            <div id="deletion" class="p-6 border border-rose-500/20 bg-rose-500/5 rounded-2xl space-y-4 mt-6">
+              <div class="flex items-center space-x-2 text-rose-600 dark:text-rose-400">
+                <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                </svg>
+                <h4 class="font-heading font-bold text-lg">Account Deletion & Data Removal</h4>
+              </div>
+              <p class="text-sm">
+                If you wish to terminate your profile and erase your information, you may do so through the methods below:
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+                <div class="bg-white/60 dark:bg-slate-950/40 p-4 rounded-xl border border-slate-200/50 dark:border-slate-800/50">
+                  <span class="font-bold block text-slate-800 dark:text-slate-100 mb-1">Email Request</span>
+                  Email us directly at <a href="mailto:namaste@eailabs.in" class="text-brand-500 underline font-medium">namaste@eailabs.in</a> with your request. The deletion process will be initiated within 72 hours.
+                </div>
+                <div class="bg-white/60 dark:bg-slate-950/40 p-4 rounded-xl border border-slate-200/50 dark:border-slate-800/50">
+                  <span class="font-bold block text-slate-800 dark:text-slate-100 mb-1">Interactive Deletion Builder</span>
+                  Submit a deletion request using the automated email builder below to instantly pre-fill your request email.
+                </div>
+              </div>
+
+              <!-- Interactive Email Template Generator -->
+              <div class="pt-4 border-t border-slate-200/40 dark:border-slate-800/40">
+                <h5 class="font-semibold text-sm text-slate-900 dark:text-slate-100 mb-3">Interactive Deletion Email Builder</h5>
+                <div class="space-y-3">
+                  <div>
+                    <label for="deleteEmail" class="block text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1">Your Registered Gmail Address</label>
+                    <div class="flex space-x-2">
+                      <input type="email" id="deleteEmail" placeholder="e.g. user@gmail.com" class="px-3 py-2 text-sm rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 focus:outline-none focus:ring-1 focus:ring-brand-500 flex-grow max-w-sm">
+                      <button onclick="generateMail()" class="px-4 py-2 text-xs font-bold text-white bg-rose-600 hover:bg-rose-700 rounded-lg transition-colors shadow-sm">
+                        Generate Mail
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3.5 bg-slate-900/5 dark:bg-white/5 border border-slate-200/40 dark:border-slate-800/40 rounded-xl text-xs space-y-1">
+                <span class="font-bold text-slate-800 dark:text-slate-100 block">What is deleted?</span>
+                <p>Personal attributes (names, profile picture assets, Google authentication ties), all past device tokens, and structural rankings will be purged. Aggregated scores will be anonymized for historical test scoring difficulty curves.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Children's Privacy -->
+        <section id="children" class="p-6 md:p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm content-section scroll-mt-20">
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="w-2.5 h-7 rounded-full bg-brand-500"></span>
+            <h2 class="font-heading font-bold text-2xl text-slate-900 dark:text-white">6. Children's Privacy</h2>
+          </div>
+          <div class="space-y-4 leading-relaxed">
+            <p>
+              Nano10 targets high school students and young adults preparing for competitive engineering entrance examinations (such as JEE). 
+            </p>
+            <p>
+              The Service is <strong>not intended for children under the age of 13</strong>. We do not knowingly collect, distribute, or retain personal data from children under 13. If you are a parent or legal guardian and you discover that your child under 13 has signed up or provided information, please contact us immediately. We will take rapid actions to remove such user records from our production servers.
+            </p>
+          </div>
+        </section>
+
+        <!-- Security Measures -->
+        <section id="security" class="p-6 md:p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm content-section scroll-mt-20">
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="w-2.5 h-7 rounded-full bg-brand-500"></span>
+            <h2 class="font-heading font-bold text-2xl text-slate-900 dark:text-white">7. Security Measures</h2>
+          </div>
+          <div class="space-y-4 leading-relaxed">
+            <p>
+              We prioritize protecting your data and employ administrative, software, and hardware defenses:
+            </p>
+            <ul class="space-y-2 list-disc pl-5">
+              <li>All application communication to our backend APIs occurs exclusively over encrypted <strong>HTTPS/TLS</strong> protocols.</li>
+              <li>Authentication tokens (Firebase ID tokens) are verified on the backend on every API call.</li>
+              <li>Internal database systems are hosted behind virtual private clouds and network isolation walls.</li>
+            </ul>
+            <p>
+              Please remember that no transmission channel over the internet or storage database system is 100% secure. While we strive to protect your data, we cannot guarantee absolute security.
+            </p>
+          </div>
+        </section>
+
+        <!-- Your Data Rights -->
+        <section id="rights" class="p-6 md:p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm content-section scroll-mt-20">
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="w-2.5 h-7 rounded-full bg-brand-500"></span>
+            <h2 class="font-heading font-bold text-2xl text-slate-900 dark:text-white">8. Your Data Rights</h2>
+          </div>
+          <div class="space-y-4 leading-relaxed font-light">
+            <p>
+              Depending on your location, you may have specific data rights, including:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-2">
+              <div class="p-4 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-100 dark:border-slate-900">
+                <span class="font-bold text-slate-900 dark:text-white block mb-1">Access</span>
+                Request details of what personal data we hold about you.
+              </div>
+              <div class="p-4 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-100 dark:border-slate-900">
+                <span class="font-bold text-slate-900 dark:text-white block mb-1">Rectify</span>
+                Request corrections to any inaccurate profile details.
+              </div>
+              <div class="p-4 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-100 dark:border-slate-900">
+                <span class="font-bold text-slate-900 dark:text-white block mb-1">Erase</span>
+                Complete deletion of your account and related records.
+              </div>
+            </div>
+            <p class="text-sm">
+              To exercise any rights, simply contact us at <a href="mailto:namaste@eailabs.in" class="text-brand-500 hover:underline">namaste@eailabs.in</a>. We will reply to all verified requests within 30 days.
+            </p>
+          </div>
+        </section>
+
+        <!-- Policy Changes -->
+        <section id="changes" class="p-6 md:p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm content-section scroll-mt-20">
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="w-2.5 h-7 rounded-full bg-brand-500"></span>
+            <h2 class="font-heading font-bold text-2xl text-slate-900 dark:text-white">9. Policy Changes</h2>
+          </div>
+          <div class="space-y-4 leading-relaxed">
+            <p>
+              We may revise this Privacy Policy periodically to reflect shifts in our features, changes in the law, or updates to third-party SDKs. 
+            </p>
+            <p>
+              When changes are made, we will update the "Last Updated" date at the top of the policy page. If the revisions are substantial, we will provide additional notifications in the app prior to the changes taking effect. We recommend reviewing this document periodically to stay informed about how we protect your information.
+            </p>
+          </div>
+        </section>
+
+        <!-- Contact Us -->
+        <section id="contact" class="p-6 md:p-8 bg-gradient-to-br from-brand-600 to-indigo-700 text-white rounded-3xl shadow-lg shadow-brand-500/20 content-section scroll-mt-20">
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="w-2.5 h-7 rounded-full bg-white"></span>
+            <h2 class="font-heading font-bold text-2xl">10. Contact Us</h2>
+          </div>
+          <div class="space-y-4 leading-relaxed">
+            <p>
+              If you have any questions, security concerns, compliance feedback, or complaints regarding this Privacy Policy, please contact us:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div class="p-4 rounded-2xl bg-white/10 border border-white/20">
+                <span class="block text-white/60 text-xs font-semibold uppercase tracking-wider mb-1">Email Support</span>
+                <a href="mailto:namaste@eailabs.in" class="font-bold text-white text-lg hover:underline flex items-center space-x-1.5">
+                  <span>namaste@eailabs.in</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+              </div>
+              <div class="p-4 rounded-2xl bg-white/10 border border-white/20">
+                <span class="block text-white/60 text-xs font-semibold uppercase tracking-wider mb-1">Developer Address</span>
+                <span class="font-bold text-white text-sm block">Exponent AI Labs</span>
+                <span class="text-xs text-white/80 block">Talwandi, Kota, Rajasthan, India - 324005</span>
+                <span class="text-xs text-white/80 block mt-1">Phone: +91 9414938886</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200/80 dark:border-slate-800/80 py-12 relative z-10 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 text-center space-y-4">
+      <div class="flex justify-center items-center space-x-2">
+        <div class="w-6 h-6 rounded-md bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center">
+          <span class="font-heading font-black text-white text-[10px]">N10</span>
+        </div>
+        <span class="font-heading font-semibold text-slate-900 dark:text-white">Nano10</span>
+      </div>
+      <p class="text-xs text-slate-400 dark:text-slate-500">
+        &copy; 2026 Nano10 Prep Technologies Pvt. Ltd. All rights reserved.
+      </p>
+      <p class="text-[10px] text-slate-400/80 dark:text-slate-500/80 max-w-md mx-auto">
+        Google Play is a trademark of Google LLC. Firebase and related tools are registered trademarks of Google LLC.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button id="backToTop" class="fixed bottom-6 right-6 p-3 rounded-full bg-brand-600 hover:bg-brand-700 text-white shadow-lg hover:shadow-brand-500/30 transition-all duration-300 scale-0 z-40 focus:outline-none" aria-label="Scroll back to top">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+    </svg>
+  </button>
+
+  <!-- Inline JavaScript Logic -->
+  <script>
+    // 1. Dark Mode State Management
+    const html = document.documentElement;
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+
+    // Default to dark mode for striking initial UI
+    if (localStorage.getItem('theme') === 'light') {
+      html.classList.remove('dark');
+      sunIcon.classList.add('hidden');
+      moonIcon.classList.remove('hidden');
+    } else {
+      html.classList.add('dark');
+      sunIcon.classList.remove('hidden');
+      moonIcon.classList.add('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+      }
+    });
+
+    // 2. Interactive Search & Real-Time Highlight Feature
+    const searchInput = document.getElementById('policySearch');
+    const sections = document.querySelectorAll('.content-section');
+    const feedback = document.getElementById('searchFeedback');
+
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.trim().toLowerCase();
+      
+      // Clear previous highlights
+      removeHighlights();
+
+      if (!query) {
+        feedback.classList.add('hidden');
+        sections.forEach(sec => sec.style.opacity = '1');
+        return;
+      }
+
+      let totalMatches = 0;
+      
+      sections.forEach(section => {
+        let matched = false;
+        
+        // Match in header or text nodes
+        const walk = document.createTreeWalker(section, NodeFilter.SHOW_TEXT, null, false);
+        const textNodes = [];
+        let node;
+        while(node = walk.nextNode()) {
+          textNodes.push(node);
+        }
+
+        textNodes.forEach(node => {
+          const text = node.nodeValue;
+          const index = text.toLowerCase().indexOf(query);
+          
+          if (index !== -1 && node.parentNode && node.parentNode.tagName !== 'SCRIPT' && node.parentNode.tagName !== 'STYLE') {
+            matched = true;
+            totalMatches++;
+            
+            // Highlight matching node
+            const parent = node.parentNode;
+            const fragment = document.createDocumentFragment();
+            
+            // Handle multiple occurrences in same text block
+            let currentText = text;
+            
+            while (true) {
+              const pos = currentText.toLowerCase().indexOf(query);
+              if (pos === -1) break;
+              
+              // Append static text before match
+              fragment.appendChild(document.createTextNode(currentText.substring(0, pos)));
+              
+              // Create highlight span
+              const span = document.createElement('span');
+              span.className = 'search-highlight';
+              span.textContent = currentText.substring(pos, pos + query.length);
+              fragment.appendChild(span);
+              
+              currentText = currentText.substring(pos + query.length);
+            }
+            
+            fragment.appendChild(document.createTextNode(currentText));
+            parent.replaceChild(fragment, node);
+          }
+        });
+
+        if (matched) {
+          section.style.opacity = '1';
+        } else {
+          section.style.opacity = '0.4';
+        }
+      });
+
+      if (totalMatches > 0) {
+        feedback.textContent = `Found ${totalMatches} term match(es)`;
+        feedback.classList.remove('hidden');
+      } else {
+        feedback.textContent = 'No matching terms found';
+        feedback.classList.remove('hidden');
+      }
+    });
+
+    function removeHighlights() {
+      const highlights = document.querySelectorAll('.search-highlight');
+      highlights.forEach(span => {
+        const text = span.textContent;
+        const textNode = document.createTextNode(text);
+        
+        // Merge with surrounding text nodes
+        const parent = span.parentNode;
+        if (parent) {
+          parent.replaceChild(textNode, span);
+          parent.normalize();
+        }
+      });
+    }
+
+    // 3. Active TOC Highlighting via IntersectionObserver
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          document.querySelectorAll('.toc-link').forEach(link => {
+            if (link.getAttribute('href') === `#${id}`) {
+              link.className = 'toc-link block py-2 px-3 text-sm font-medium rounded-lg text-brand-600 bg-brand-50/50 dark:text-brand-400 dark:bg-brand-950/20 border-l-2 border-brand-500 transition-all';
+            } else {
+              link.className = 'toc-link block py-2 px-3 text-sm font-medium rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800/40 border-l-2 border-transparent transition-all';
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+
+    // 4. Back To Top Button Visibility & Logic
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.remove('scale-0');
+        backToTopBtn.classList.add('scale-100');
+      } else {
+        backToTopBtn.classList.remove('scale-100');
+        backToTopBtn.classList.add('scale-0');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 5. Interactive Deletion Email Pre-filler
+    function generateMail() {
+      const emailVal = document.getElementById('deleteEmail').value.trim();
+      if (!emailVal || !emailVal.includes('@')) {
+        alert('Please enter a valid Google Account email address.');
+        return;
+      }
+      
+      const subject = encodeURIComponent('Request for Nano10 Account Deletion');
+      const body = encodeURIComponent(`Hello Nano10 Privacy Team,\n\nI am requesting the permanent deletion of my account and all associated personal information from your servers in accordance with Google Play developer policies.\n\nRegistered Email Address: ${emailVal}\n\nPlease confirm when the deletion is completed.\n\nRegards,\n[Your Name]`);
+      
+      window.location.href = `mailto:namaste@eailabs.in?subject=${subject}&body=${body}`;
+    }
+
+    // Set dynamic last updated date as current local date
+    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+    const dateStr = new Date().toLocaleDateString('en-US', dateOptions);
+    document.getElementById('currentDate').textContent = dateStr;
+  </script>
+</body>
+</html>
